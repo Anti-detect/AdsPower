@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TricksMMO - Kho Tàng Kiến Thức & Thủ Thuật MMO</title>
+    <style>
+        /* --- Cài đặt chung --- */
+        :root {
+            --primary-color: #007bff;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --text-color: #555;
+            --container-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .main-header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        .main-header .main-menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-header .main-menu ul li {
+            margin-left: 1.5rem;
+        }
+
+        .main-header .main-menu ul li a {
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: color 0.3s ease;
+        }
+
+        .main-header .main-menu ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .search-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            background: var(--light-color);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #0056b3;
+            text-decoration: none;
+        }
+
+        /* --- Sections --- */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Featured Posts --- */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .post-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card .card-content {
+            padding: 1.5rem;
+        }
+
+        .post-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Latest Posts --- */
+        .latest-posts-list ul {
+            list-style: none;
+        }
+
+        .latest-posts-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .latest-posts-list li:last-child {
+            border-bottom: none;
+        }
+
+        .latest-posts-list img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+
+        .latest-posts-list h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        .view-all-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+        
+        /* --- Categories --- */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .category-item {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .category-item h3 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .category-item ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .category-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* --- Footer --- */
+        .main-footer {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-grid h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+        
+        .footer-grid a {
+            color: #ccc;
+        }
+
+        .footer-grid a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media(max-width: 768px) {
+            .main-header .main-menu {
+                display: none; /* Simplification for this example. A real site would use a hamburger menu. */
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .posts-grid, .categories-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">TricksMMO</a>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#guides">Guides A-Z</a></li>
+                    <li><a href="#tools">Tools & Software</a></li>
+                    <li><a href="#newbie">Cho Người Mới</a></li>
+                </ul>
+            </nav>
+            <div class="search-icon">🔍</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Kho Tàng Kiến Thức & Thủ Thuật MMO</h1>
+            <p>Nơi tổng hợp những bài viết chất lượng và kinh nghiệm thực chiến nhất từ cộng đồng TricksMMO.</p>
+            <a href="#featured-posts" class="btn">Khám Phá Các Bài Viết Nổi Bật</a>
+        </div>
+    </section>
+
+    <section id="featured-posts" class="section">
+        <div class="container">
+            <h2 class="section-title">Bài Viết Nổi Bật</h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <a href="#">
+                        <img src="https://picsum.photos/400/200?random=1" alt="Hình ảnh bài viết">
+                        <div class="card-content">
+                            <h3>Hướng dẫn nuôi tài khoản Amazon bền vững 2025</h3>
+                            <p>Tổng hợp các kỹ thuật, kinh nghiệm và lưu ý quan trọng để xây dựng hệ thống tài khoản Amazon an toàn, hiệu quả.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="post-card">
+                     <a href="#">
+                        <img src="https://picsum.photos/400/200?random=2" alt="Hình ảnh bài viết">
+                        <div class="card-content">
+                            <h3>Case study: Kiếm $1000 đầu tiên từ eBay như thế nào?</h3>
+                            <p>Chia sẻ hành trình thực tế từ con số 0, những sai lầm và bài học xương máu khi bắt đầu với nền tảng eBay.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="post-card">
+                     <a href="#">
+                        <img src="https://picsum.photos/400/200?random=3" alt="Hình ảnh bài viết">
+                        <div class="card-content">
+                            <h3>Top 5 Proxy dân cư (Residential) uy tín cho MMO</h3>
+                            <p>Đánh giá chi tiết về ưu, nhược điểm và chi phí của các nhà cung cấp proxy dân cư hàng đầu hiện nay.</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--light-color);">
+        <div class="container">
+            <h2 class="section-title">Bài Viết Mới Nhất</h2>
+            <div class="latest-posts-list">
+                <ul>
+                    <li>
+                        <a href="#"><img src="https://picsum.photos/80/80?random=4" alt="Thumbnail"></a>
+                        <div><h4><a href="#">Cập nhật chính sách mới của Google Adsense tháng 9/2025</a></h4></div>
+                    </li>
+                     <li>
+                        <a href="#"><img src="https://picsum.photos/80/80?random=5" alt="Thumbnail"></a>
+                        <div><h4><a href="#">Cách sử dụng Dolphin Anty để quản lý nhiều tài khoản hiệu quả</a></h4></div>
+                    </li>
+                     <li>
+                        <a href="#"><img src="https://picsum.photos/80/80?random=6" alt="Thumbnail"></a>
+                        <div><h4><a href="#">Phân biệt các loại Offer trong Affiliate Marketing</a></h4></div>
+                    </li>
+                </ul>
+                <a href="#" class="view-all-link">Xem tất cả bài viết →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Khám Phá Theo Chủ Đề</h2>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <h3>Hướng dẫn Amazon</h3>
+                    <ul>
+                        <li><a href="#">Tạo tài khoản Seller Central</a></li>
+                        <li><a href="#">Nghiên cứu sản phẩm ngách</a></li>
+                        <li><a href="#">Tối ưu listing chuẩn SEO</a></li>
+                        <li><a href="#">Xử lý suspend tài khoản</a></li>
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <h3>Kinh nghiệm eBay</h3>
+                     <ul>
+                        <li><a href="#">Listing sản phẩm đầu tay</a></li>
+                        <li><a href="#">Xây dựng feedback tích cực</a></li>
+                        <li><a href="#">Dropshipping trên eBay</a></li>
+                        <li><a href="#">Vượt qua giới hạn bán hàng</a></li>
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <h3>Tools Review</h3>
+                    <ul>
+                        <li><a href="#">Đánh giá Ahrefs vs SEMrush</a></li>
+                        <li><a href="#">Top phần mềm Email Marketing</a></li>
+                        <li><a href="#">Các tool check proxy hiệu quả</a></li>
+                        <li><a href="#">Sử dụng Canva cho người mới</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>TricksMMO</h4>
+                    <p>Nơi chắt lọc và lưu giữ những kiến thức giá trị nhất cho cộng đồng MMO Việt Nam.</p>
+                </div>
+                <div>
+                    <h4>Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Theo dõi chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 TricksMMO. All Rights Reserved. Xây dựng từ di sản của diễn đàn TricksMMO.com.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
