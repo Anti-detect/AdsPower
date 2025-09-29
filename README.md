@@ -38,5 +38,32 @@ Next steps tôi có thể làm cho bạn:
 3. Thiết lập pipeline nhỏ (GitHub Pages / Netlify) để preview và publish.
 
 Cho tôi biết muốn tôi làm bước tiếp theo nào (ví dụ: viết bản dịch EN + OG image + meta tags), tôi sẽ bắt tay làm và cập nhật todo list.
-# AdsPower
-AdsPower
+---
+
+Deploy & QA
+------------
+
+GitHub Pages (quick):
+
+1. Đổi tên branch thành `gh-pages` hoặc vào Settings → Pages và chọn branch `main`/`/root` (tùy cách bạn muốn). 
+2. Push repo lên GitHub, sau khi Pages build xong bạn sẽ nhận URL `https://<your-username>.github.io/<repo>`.
+3. Test các đường dẫn: `/`, `/multilogin-review.html`, `/en/`, `/en/multilogin-review.html`, v.v.
+
+Netlify (recommended for custom domain & redirects):
+
+1. Đăng nhập Netlify và chọn "New site from Git" → kết nối repo.
+2. Build settings: site tĩnh (no build command). Publish directory: `/`.
+3. Thiết lập domain và bật HTTPS.
+
+QA checklist (quick):
+- [ ] Thay `https://example.com/` trong `sitemap.xml` bằng domain thật.
+- [ ] Kiểm tra link affiliate (https://multilogin.com/#a_aid=ADB) hoạt động và mã ADBNEW50 áp dụng.
+- [ ] Kiểm tra thẻ meta / og:image hiển thị đúng khi chia sẻ (Facebook/Twitter Card validator).
+- [ ] Kiểm tra responsive trên mobile.
+- [ ] Kiểm tra file `robots.txt` (cho phép lập chỉ mục các trang cần thiết).
+
+Nếu bạn muốn, tôi có thể: tự động cấu hình GitHub Pages/Netlify bằng commits hướng dẫn, hoặc tạo file `_redirects`/`netlify.toml` nếu cần.
+
+---
+
+ADSPower
