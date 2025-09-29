@@ -1,0 +1,53 @@
+/*
+Create a professional and clean CSS style for the website.
+Color palette: dark background (#1a1a1a), light text, accent color #1e90ff.
+Poppins font used. Responsive layout, sticky navbar, highlighted Multilogin column.
+*/
+:root{
+  --bg:#1a1a1a;
+  --panel:#212226;
+  --text:#e6e6e6;
+  --muted:#9aa1a6;
+  --accent:#1e90ff;
+  --accent-2:#22c55e;
+}
+*{box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.site-header{position:sticky;top:0;background:linear-gradient(90deg,#0f1724, #0b1220);border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+.nav-wrap{display:flex;align-items:center;gap:20px}
+.logo{font-weight:700;font-size:20px;color:var(--accent)}
+.main-nav{display:flex;gap:12px;flex:1}
+.main-nav a{color:var(--text);text-decoration:none;padding:12px;border-radius:6px}
+.main-nav a:hover{background:rgba(255,255,255,0.02)}
+.lang-select{display:flex;align-items:center;gap:8px}
+select#lang{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06);padding:6px;border-radius:6px}
+
+.hero{padding:40px 0;text-align:center}
+.hero .lead{color:var(--muted);max-width:800px;margin:12px auto}
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.accent{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.btn.big{padding:16px 26px;font-size:18px}
+.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+
+.comparison{padding:30px 0}
+.table-wrap{overflow:auto;background:var(--panel);padding:12px;border-radius:10px}
+table{width:100%;border-collapse:collapse;color:var(--text)}
+th,td{padding:12px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+th:first-child,td:first-child{width:20%}
+th{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);font-weight:600}
+.highlight{background:linear-gradient(90deg,rgba(30,144,255,0.12),transparent);color:#fff}
+.disclaimer{color:var(--muted);margin-top:10px}
+
+.reviews, .affiliate, .contact{padding:24px 0}
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:20px;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .main-nav{display:none}
+  .nav-wrap{justify-content:space-between}
+  .cta-row{flex-direction:column}
+  th,td{font-size:14px}
+}

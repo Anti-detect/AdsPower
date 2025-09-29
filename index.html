@@ -1,30 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdsPower - Antidetect Browser</title>
-    <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #e9ecef; text-align: center; }
-        header { background-color: #20c997; color: white; padding: 20px; }
-        .main { max-width: 650px; margin: 20px auto; }
-        button { background-color: #dc3545; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-        button:hover { background-color: #c82333; }
-    </style>
+    <title>ADSPower: Đánh giá & So sánh Trình duyệt Antidetect Tốt nhất 2025</title>
+    <meta name="description" content="ADSPower đánh giá và so sánh Multilogin, GoLogin, Dolphin{anty} và các trình duyệt antidetect hàng đầu năm 2025. Nhận mã giảm giá Multilogin 50% (ADBNEW50)." />
+    <meta name="keywords" content="Multilogin, antidetect, so sánh trình duyệt, mã giảm giá Multilogin, ADBNEW50, browser fingerprint" />
+    <meta property="og:title" content="ADSPower: Đánh giá & So sánh Trình duyệt Antidetect 2025" />
+    <meta property="og:description" content="Bảng so sánh chi tiết các trình duyệt antidetect. Đọc đánh giá Multilogin và nhận mã giảm giá 50% (ADBNEW50)." />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="/index.html" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-    <header>
-        <h1>AdsPower</h1>
+    <!--
+    Bước 1: Tạo cấu trúc HTML cơ bản và thanh điều hướng đa ngôn ngữ
+
+    // Paste this prompt into Copilot as a comment to generate the navbar and language dropdown automatically:
+    // "Create a responsive navigation bar with logo 'ADSPower', links: Home, Reviews, Comparison, Blog, Contact. Add a language dropdown with options: Vietnamese (vi), English (en), Chinese (zh), Russian (ru), Portuguese (pt). Make the navbar sticky and accessible."
+    -->
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <div class="logo">ADSPower</div>
+            <nav class="main-nav">
+                <a href="/vi/">Trang Chủ</a>
+                <a href="/vi/multilogin-review.html">Đánh Giá</a>
+                <a href="#comparison">So Sánh</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Liên Hệ</a>
+            </nav>
+            <div class="lang-select">
+                <label for="lang">Ngôn ngữ</label>
+                <select id="lang" onchange="onLangChange(this.value)">
+                    <option value="/vi/" selected>Tiếng Việt</option>
+                    <option value="/en/">English</option>
+                    <option value="/zh/">中文</option>
+                    <option value="/ru/">Русский</option>
+                    <option value="/pt/">Português</option>
+                </select>
+            </div>
+        </div>
     </header>
-    <div class="main">
-        <h2>Manage Multiple Accounts</h2>
-        <p>AdsPower provides 2 free profiles. Scale to 10 profiles for $5.4/month. No unlimited plan available.</p>
-        <h3>Pricing</h3>
-        <ul>
-            <li>2 Profiles: Free</li>
-            <li>10 Profiles: $5.4/month</li>
-        </ul>
-        <button onclick="window.location.href='https://adspower.com'">Start Now</button>
-    </div>
+
+    <main class="container">
+        <!--
+        Bước 2: Tạo Nội Dung Trang Chủ (Tập trung vào bản Tiếng Việt trước)
+
+        // Paste this prompt into Copilot inside <main> to generate hero, comparison table, review links, and CTA:
+        // "Create a hero section with H1: 'ADSPower: Đánh giá & So sánh các Trình duyệt Antidetect Tốt nhất 2025', short intro paragraph positioning ADSPower as an independent reviewer. Add a comparison table comparing Multilogin, GoLogin, Dolphin{anty}, ADSPower with columns: Price, Profiles, Browser Fingerprint, Ease of Use, Proxy Support, Best For. Highlight the Multilogin column visually. Add links to detailed reviews and a prominent CTA button 'Nhận Mã Giảm Giá 50% Multilogin' linking to an affiliate placeholder."
+        -->
+
+        <section class="hero">
+            <h1>ADSPower: Đánh giá & So sánh các Trình duyệt Antidetect Tốt nhất 2025</h1>
+            <p class="lead">Chúng tôi cung cấp đánh giá khách quan và bảng so sánh chi tiết giúp bạn chọn trình duyệt antidetect phù hợp nhất với nhu cầu.</p>
+            <div class="cta-row">
+                <a class="btn primary" href="/vi/multilogin-review.html">Xem Đánh Giá Multilogin</a>
+                <a class="btn accent" href="#comparison">Xem Bảng So Sánh</a>
+            </div>
+        </section>
+
+        <section id="comparison" class="comparison">
+            <h2>Bảng so sánh nhanh</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Đặc tính</th>
+                            <th class="highlight">Multilogin</th>
+                            <th>GoLogin</th>
+                            <th>Dolphin{anty}</th>
+                            <th>ADSPower</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Giá</td>
+                            <td class="highlight">Giá cao - Nhiều tính năng</td>
+                            <td>Trung bình</td>
+                            <td>Thấp</td>
+                            <td>Biến động</td>
+                        </tr>
+                        <tr>
+                            <td>Số profile</td>
+                            <td class="highlight">Tùy chọn lớn</td>
+                            <td>Hỗ trợ nhiều</td>
+                            <td>Ít hơn</td>
+                            <td>Hạn chế</td>
+                        </tr>
+                        <tr>
+                            <td>Fingerprint</td>
+                            <td class="highlight">Rất tốt</td>
+                            <td>Rất tốt</td>
+                            <td>Khá</td>
+                            <td>Khá</td>
+                        </tr>
+                        <tr>
+                            <td>Dễ sử dụng</td>
+                            <td class="highlight">Dễ sử dụng cho doanh nghiệp</td>
+                            <td>Dễ cho cá nhân</td>
+                            <td>Ngắn gọn</td>
+                            <td>Thân thiện</td>
+                        </tr>
+                        <tr>
+                            <td>Hỗ trợ Proxy</td>
+                            <td class="highlight">Hỗ trợ mạnh mẽ</td>
+                            <td>Hỗ trợ</td>
+                            <td>Hỗ trợ</td>
+                            <td>Hạn chế</td>
+                        </tr>
+                        <tr>
+                            <td>Phù hợp cho</td>
+                            <td class="highlight">Agency, Marketers, Scale</td>
+                            <td>Marketers nhỏ</td>
+                            <td>Người mới</td>
+                            <td>Người dùng cá nhân</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="disclaimer">Ghi chú: Bảng trên chỉ mang tính tham khảo. Xem bài đánh giá chi tiết để biết thông tin cập nhật và khuyến nghị phù hợp.</p>
+        </section>
+
+        <section class="reviews" id="reviews">
+            <h2>Đánh giá chi tiết</h2>
+            <ul>
+                <li><a href="/vi/multilogin-review.html">Multilogin — Đánh giá chi tiết</a></li>
+                <li><a href="#">GoLogin — Tổng quan</a></li>
+                <li><a href="#">Dolphin{anty} — Tổng quan</a></li>
+                <li><a href="#">ADSPower — So sánh</a></li>
+            </ul>
+        </section>
+
+        <section class="affiliate">
+            <h2>Ưu đãi đặc biệt</h2>
+            <p>Nhận ngay <strong>50% giảm giá</strong> cho Multilogin khi mua qua liên kết chính thức của chúng tôi. Mã giảm giá: <strong>ADBNEW50</strong>.</p>
+            <a class="btn big primary" href="https://multilogin.com/#a_aid=ADB" rel="sponsored noopener noreferrer">Nhận Mã Giảm Giá 50% Multilogin (ADBNEW50)</a>
+            <p class="disclaimer" style="color:var(--muted);margin-top:8px;">Lưu ý: Giá và khuyến mãi có thể thay đổi. Mã ADBNEW50 áp dụng khi thanh toán tại Multilogin. Vui lòng kiểm tra điều kiện áp dụng trên trang đích.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Liên hệ</h2>
+            <p>Nếu bạn muốn hợp tác hoặc có câu hỏi, hãy liên hệ với chúng tôi qua email: info@adspower.example</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 ADSPower. Trang review độc lập về các trình duyệt antidetect.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
